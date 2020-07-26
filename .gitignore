@@ -7,9 +7,5 @@ Garbage Valley/Logs/
 Garbage Valley/Packages/
 Garbage Valley/Temp/
 Garbage Valley/[Oo]bj/
-Garbage Valley/Unity.Analytics.DataPrivacy.csproj
-Garbage Valley/Unity.CollabProxy.Editor.csproj
-Garbage Valley/Unity.PackageManagerUI.Editor.csproj
-Garbage Valley/Unity.TextMeshPro.Editor.csproj
-Garbage Valley/Unity.TextMeshPro.csproj
+Garbage Valley/*.csproj
 test/
