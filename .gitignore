@@ -13,3 +13,4 @@ Garbage Valley/Unity.PackageManagerUI.Editor.csproj
 Garbage Valley/Unity.TextMeshPro.Editor.csproj
 Garbage Valley/Unity.TextMeshPro.csproj
 test/
+*.txt
