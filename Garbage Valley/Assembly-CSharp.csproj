@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\CameraFellow.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/github/Garbage/Garbage-Valley/Garbage Valley/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
