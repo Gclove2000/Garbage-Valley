@@ -7,5 +7,6 @@ Garbage Valley/Logs/
 Garbage Valley/Packages/
 Garbage Valley/Temp/
 Garbage Valley/[Oo]bj/
-Garbage Valley/*.csproj
+Garbage Valley/Assembly-CSharp.csproj
+
 test/
