@@ -10,14 +10,19 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     [Header("设置人物移动速度")]
     public float speed;
+
+    private BoxCollider2D myBody;
+    private bool isNPC;//判断pnc
     void Start()
     {
+        myBody = GetComponent<BoxCollider2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckNPC();
         Filp();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         //读取x,y和magnitude参数，实现动画的控制
@@ -26,7 +31,13 @@ public class PlayerController : MonoBehaviour
         animatior.SetFloat("Magnitude", movement.magnitude);
         transform.position = transform.position + speed*movement * Time.deltaTime;
     }
-    void Filp()
+
+    void CheckNPC()
+    {
+        isNPC = myBody.IsTouchingLayers(LayerMask.GetMask("NPC"));
+        Debug.Log(isNPC);
+    }
+    void Filp()//水平翻转
     {
         if (animatior.GetFloat("Horizontal") < -0.1f)
         {
