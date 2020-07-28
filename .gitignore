@@ -1,0 +1,12 @@
+Garbage Valley/.vs/
+Garbage Valley/Assembly-Csharp.csproj
+Garbage Valley/*.sln
+Garbage Valley/*.csproj
+Garbage Valley/Library/
+Garbage Valley/Logs/
+Garbage Valley/Packages/
+Garbage Valley/Temp/
+Garbage Valley/[Oo]bj/
+Garbage Valley/Assembly-CSharp.csproj
+test/
+Garbage Valley/Library/ArifactDB
