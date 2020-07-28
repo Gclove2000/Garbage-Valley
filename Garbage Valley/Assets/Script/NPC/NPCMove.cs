@@ -30,8 +30,8 @@ public class NPCMove : MonoBehaviour
     {
         Filp();
         if (HavePlayer) {
-            NPCAnimator.SetFloat("Horizontal", transform.position.x);
-            NPCAnimator.SetFloat("Vertical", transform.position.y);
+            NPCAnimator.SetFloat("Horizontal", transform.position.x - NPCTransform.position.x);  //通过两个位置相减就可以了，负数向左，正数向右
+            NPCAnimator.SetFloat("Vertical", transform.position.y - NPCTransform.position.y);
         }
         
     }
@@ -48,8 +48,7 @@ public class NPCMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NPC") 
-            && collision.gameObject.name.ToString() == "UnityEngine.CircleCollider2D")
+        if (collision.gameObject.CompareTag("NPC"))
         {
             Debug.Log("catch you");
             HavePlayer = true;
@@ -58,8 +57,7 @@ public class NPCMove : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NPC") 
-            && collision.gameObject.name.ToString() == "UnityEngine.CircleCollider2D")
+        if (collision.gameObject.CompareTag("NPC"))
            
         {
             HavePlayer = false;
