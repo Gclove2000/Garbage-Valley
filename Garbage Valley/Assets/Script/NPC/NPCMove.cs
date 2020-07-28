@@ -48,7 +48,8 @@ public class NPCMove : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NPC"))
+        if (collision.gameObject.CompareTag("NPC") 
+            && collision.gameObject.name.ToString() == "UnityEngine.CircleCollider2D")
         {
             Debug.Log("catch you");
             HavePlayer = true;
@@ -57,7 +58,8 @@ public class NPCMove : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("NPC"))
+        if (collision.gameObject.CompareTag("NPC") 
+            && collision.gameObject.name.ToString() == "UnityEngine.CircleCollider2D")
            
         {
             HavePlayer = false;
