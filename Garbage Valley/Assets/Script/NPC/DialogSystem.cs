@@ -17,7 +17,7 @@ public class DialogSystem: MonoBehaviour
     public int index;//文本编号
 
     [Header("头像")]
-    public Image face01, face02;
+    public Sprite face01, face02;
 
     private bool textFinished;//文本阅读结束
     List<string> textList = new List<string>();
@@ -66,11 +66,11 @@ public class DialogSystem: MonoBehaviour
         {
             case "A\r":
                 index++;
-                face = face01;
+                face.sprite = face01;
                 break;
             case "B\r":
                 index++;
-                face = face02;
+                face.sprite = face02;
                 break;
         }
 
