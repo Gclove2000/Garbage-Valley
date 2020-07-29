@@ -8349,6 +8349,7 @@ MonoBehaviour:
   slotGrid: {fileID: 1361218391}
   emptySlot: {fileID: 261861453294121592, guid: d037d1d9986f7e44eaf223a7db404bb5,
     type: 3}
+  itemInfromation: {fileID: 1990471272}
   Items: []
 --- !u!1 &1153861775
 GameObject:
