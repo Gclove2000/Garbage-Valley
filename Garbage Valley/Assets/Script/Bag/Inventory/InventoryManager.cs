@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
     [Header("slot相关设置")]
     public GameObject slotGrid;
     public GameObject emptySlot;
+    public Text itemInfromation;  //物品信息 
 
     [Header("放置Slot的列表")]
     public List<GameObject> Items = new List<GameObject>();
@@ -26,6 +27,12 @@ public class InventoryManager : MonoBehaviour
     private void OnEnable()
     {
         Refreash();
+        instance.itemInfromation.text = "";
+    }
+
+    public static void UpdateItemInfo(string iteminfo)
+    {
+        instance.itemInfromation.text = iteminfo;  //更新物品信息
     }
     public static void Refreash()
     {
@@ -36,7 +43,7 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
             else{
-                Destroy(instance.transform.GetChild(i).gameObject);
+                Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
                 instance.Items.Clear();
             }
         }
@@ -45,6 +52,8 @@ public class InventoryManager : MonoBehaviour
         {
             instance.Items.Add(Instantiate(instance.emptySlot));
             instance.Items[i].transform.SetParent(instance.slotGrid.transform);
+            instance.Items[i].GetComponent<Slot>().ID = i;
+            instance.Items[i].GetComponent<Slot>().setupSlot(instance.ThisBag.MyBag[i]);
         }
     }
 }
