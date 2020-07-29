@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckNPC();
         Filp();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         //读取x,y和magnitude参数，实现动画的控制
@@ -32,11 +31,6 @@ public class PlayerController : MonoBehaviour
         transform.position = transform.position + speed*movement * Time.deltaTime;
     }
 
-    void CheckNPC()
-    {
-        isNPC = myBody.IsTouchingLayers(LayerMask.GetMask("NPC"));
-        Debug.Log(isNPC);
-    }
     void Filp()//水平翻转
     {
         if (animatior.GetFloat("Horizontal") < -0.1f)

@@ -31,6 +31,7 @@ public class NPCButton : MonoBehaviour
         if(Button.activeSelf && Input.GetKeyDown(key))
         {
             talkUI.SetActive(true);
+            Button.SetActive(false);
         }
     }
 }
