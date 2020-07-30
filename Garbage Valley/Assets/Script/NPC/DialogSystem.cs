@@ -64,11 +64,11 @@ public class DialogSystem: MonoBehaviour
         textLabel.text = "";
         switch(textList[index])
         {
-            case "A\r":
+            case "A":
                 index++;
                 face.sprite = face01;
                 break;
-            case "B\r":
+            case "B":
                 index++;
                 face.sprite = face02;
                 break;

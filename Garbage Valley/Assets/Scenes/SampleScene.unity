@@ -4933,9 +4933,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 1375624491}
-  face: {fileID: 0}
+  face: {fileID: 573159148}
   textFile: {fileID: 4900000, guid: 89c71e553d76aa142a3f5e2b2d88514e, type: 3}
+  textSpeed: 0.1
   index: 0
+  face01: {fileID: 21300000, guid: 07a097fa9908d5e41822ed8d317ed0f0, type: 3}
+  face02: {fileID: 21300000, guid: 2f226866abc1dac44a0352c2e830ac3b, type: 3}
 --- !u!1 &1153861775
 GameObject:
   m_ObjectHideFlags: 0
