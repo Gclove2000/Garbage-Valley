@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     [Header("设置人物移动速度")]
     public float speed;
+
+    private BoxCollider2D myBody;
+    private bool isNPC;//判断pnc
     void Start()
     {
+        myBody = GetComponent<BoxCollider2D>();
         
     }
 
@@ -26,7 +30,8 @@ public class PlayerController : MonoBehaviour
         animatior.SetFloat("Magnitude", movement.magnitude);
         transform.position = transform.position + speed*movement * Time.deltaTime;
     }
-    void Filp()
+
+    void Filp()//水平翻转
     {
         if (animatior.GetFloat("Horizontal") < -0.1f)
         {
