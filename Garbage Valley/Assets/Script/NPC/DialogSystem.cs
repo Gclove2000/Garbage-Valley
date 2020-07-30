@@ -20,6 +20,7 @@ public class DialogSystem: MonoBehaviour
     public Sprite face01, face02;
 
     private bool textFinished;//文本阅读结束
+    private bool textSkip;//文本阅读跳过
     List<string> textList = new List<string>();
     void Awake()
     {
@@ -40,9 +41,20 @@ public class DialogSystem: MonoBehaviour
             index = 0;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.E) && textFinished) 
+        //if (Input.GetKeyDown(KeyCode.E) && textFinished) 
+        //{
+        //    StartCoroutine(SetTextUI());
+        // }
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(SetTextUI());
+            if(textFinished && !textSkip)//如果上一个文本输入完了且没有跳过
+            {
+                StartCoroutine(SetTextUI());
+            }
+            else if(!textFinished && !textSkip)//文本没输入完而且跳过的真值还没有设置
+            {
+                textSkip = true;//要跳过
+            }
         }
     }
     
@@ -74,11 +86,20 @@ public class DialogSystem: MonoBehaviour
                 break;
         }
 
-        for (int i =0;i < textList[index].Length;i++)
+        //for (int i =0;i < textList[index].Length;i++)
+        //{
+        //    textLabel.text += textList[index][i];
+        //    yield return new WaitForSeconds(textSpeed);
+        //}
+        int site = 0;//文本的位置
+        while(!textSkip && site < textList[index].Length  )//没有跳过
         {
-            textLabel.text += textList[index][i];
+            textLabel.text += textList[index][site];
+            site++;
             yield return new WaitForSeconds(textSpeed);
         }
+        textLabel.text = textList[index];
+        textSkip = false;
         index++;
         textFinished = true;
     }
